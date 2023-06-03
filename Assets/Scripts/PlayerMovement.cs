@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 10f;
-    public float jumpForce = 15f;
+    float speed = 10f;
+    float jumpForce = 5f;
     private Rigidbody2D rb;
     private bool isGrounded;
     private bool isJumping;
@@ -20,12 +20,12 @@ public class PlayerMovement : MonoBehaviour
 
     void SetPlayerControls()
     {
-        if (transform.parent.name == "PlayerOne")
+        if (gameObject.name == "PlayerOne")
         {
             horizontalInputAxis = "Horizontal_P1";
             jumpInputButton = "Vertical_P1";
         }
-        else if (transform.parent.name == "PlayerTwo")
+        else if (gameObject.name == "PlayerTwo")
         {
             horizontalInputAxis = "Horizontal_P2";
             jumpInputButton = "Jump_P2";
